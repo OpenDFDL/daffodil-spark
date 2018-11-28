@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/test/scala"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.spark/spark-core_2.11/spark-core_2.11-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.spark/spark-core_2.11/spark-core_2.11-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.avro/avro/avro-1.8.2.jar" sourcepath="lib_managed/srcs/org.apache.avro/avro/avro-1.8.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.avro/avro/avro-1.8.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.codehaus.jackson/jackson-core-asl/jackson-core-asl-1.9.13.jar" sourcepath="lib_managed/srcs/org.codehaus.jackson/jackson-core-asl/jackson-core-asl-1.9.13-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.codehaus.jackson/jackson-core-asl/jackson-core-asl-1.9.13-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.codehaus.jackson/jackson-mapper-asl/jackson-mapper-asl-1.9.13.jar" sourcepath="lib_managed/srcs/org.codehaus.jackson/jackson-mapper-asl/jackson-mapper-asl-1.9.13-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.codehaus.jackson/jackson-mapper-asl/jackson-mapper-asl-1.9.13-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.xerial.snappy/snappy-java/snappy-java-1.1.7.1.jar" sourcepath="lib_managed/srcs/org.xerial.snappy/snappy-java/snappy-java-1.1.7.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.xerial.snappy/snappy-java/snappy-java-1.1.7.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.commons/commons-compress/commons-compress-1.8.1.jar" sourcepath="lib_managed/srcs/org.apache.commons/commons-compress/commons-compress-1.8.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.commons/commons-compress/commons-compress-1.8.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.tukaani/xz/xz-1.5.jar" sourcepath="lib_managed/srcs/org.tukaani/xz/xz-1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.tukaani/xz/xz-1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.slf4j/slf4j-api/slf4j-api-1.7.16.jar" sourcepath="lib_managed/srcs/org.slf4j/slf4j-api/slf4j-api-1.7.16-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.slf4j/slf4j-api/slf4j-api-1.7.16-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.avro/avro-mapred/avro-mapred-1.8.2-hadoop2.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.avro/avro-ipc/avro-ipc-1.8.2.jar" sourcepath="lib_managed/srcs/org.apache.avro/avro-ipc/avro-ipc-1.8.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.avro/avro-ipc/avro-ipc-1.8.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-codec/commons-codec/commons-codec-1.9.jar" sourcepath="lib_managed/srcs/commons-codec/commons-codec/commons-codec-1.9-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/commons-codec/commons-codec/commons-codec-1.9-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.twitter/chill_2.11/chill_2.11-0.9.3.jar" sourcepath="lib_managed/srcs/com.twitter/chill_2.11/chill_2.11-0.9.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.twitter/chill_2.11/chill_2.11-0.9.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.twitter/chill-java/chill-java-0.9.3.jar" sourcepath="lib_managed/srcs/com.twitter/chill-java/chill-java-0.9.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.twitter/chill-java/chill-java-0.9.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.esotericsoftware/kryo-shaded/kryo-shaded-4.0.2.jar" sourcepath="lib_managed/srcs/com.esotericsoftware/kryo-shaded/kryo-shaded-4.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.esotericsoftware/kryo-shaded/kryo-shaded-4.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.esotericsoftware/minlog/minlog-1.3.0.jar" sourcepath="lib_managed/srcs/com.esotericsoftware/minlog/minlog-1.3.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.esotericsoftware/minlog/minlog-1.3.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.objenesis/objenesis/objenesis-2.5.1.jar" sourcepath="lib_managed/srcs/org.objenesis/objenesis/objenesis-2.5.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.objenesis/objenesis/objenesis-2.5.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.xbean/xbean-asm6-shaded/xbean-asm6-shaded-4.8.jar" sourcepath="lib_managed/srcs/org.apache.xbean/xbean-asm6-shaded/xbean-asm6-shaded-4.8-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-client/hadoop-client-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-client/hadoop-client-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-client/hadoop-client-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-common/hadoop-common-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-common/hadoop-common-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-common/hadoop-common-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-annotations/hadoop-annotations-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-annotations/hadoop-annotations-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-annotations/hadoop-annotations-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.google.guava/guava/guava-11.0.2.jar" sourcepath="lib_managed/srcs/com.google.guava/guava/guava-11.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.google.guava/guava/guava-11.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.google.code.findbugs/jsr305/jsr305-1.3.9.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-cli/commons-cli/commons-cli-1.2.jar" sourcepath="lib_managed/srcs/commons-cli/commons-cli/commons-cli-1.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/commons-cli/commons-cli/commons-cli-1.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.commons/commons-math3/commons-math3-3.4.1.jar" sourcepath="lib_managed/srcs/org.apache.commons/commons-math3/commons-math3-3.4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.commons/commons-math3/commons-math3-3.4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/xmlenc/xmlenc/xmlenc-0.52.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-httpclient/commons-httpclient/commons-httpclient-3.1.jar" sourcepath="lib_managed/srcs/commons-httpclient/commons-httpclient/commons-httpclient-3.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-net/commons-net/commons-net-3.1.jar" sourcepath="lib_managed/srcs/commons-net/commons-net/commons-net-3.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/commons-net/commons-net/commons-net-3.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-collections/commons-collections/commons-collections-3.2.2.jar" sourcepath="lib_managed/srcs/commons-collections/commons-collections/commons-collections-3.2.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/commons-collections/commons-collections/commons-collections-3.2.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/log4j/log4j/log4j-1.2.17.jar" sourcepath="lib_managed/srcs/log4j/log4j/log4j-1.2.17-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/log4j/log4j/log4j-1.2.17-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-lang/commons-lang/commons-lang-2.6.jar" sourcepath="lib_managed/srcs/commons-lang/commons-lang/commons-lang-2.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/commons-lang/commons-lang/commons-lang-2.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-configuration/commons-configuration/commons-configuration-1.6.jar" sourcepath="lib_managed/srcs/commons-configuration/commons-configuration/commons-configuration-1.6-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-digester/commons-digester/commons-digester-1.8.jar" sourcepath="lib_managed/srcs/commons-digester/commons-digester/commons-digester-1.8-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-beanutils/commons-beanutils/commons-beanutils-1.7.0.jar" sourcepath="lib_managed/srcs/commons-beanutils/commons-beanutils/commons-beanutils-1.7.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/commons-beanutils/commons-beanutils/commons-beanutils-1.7.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-beanutils/commons-beanutils-core/commons-beanutils-core-1.8.0.jar"/>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.google.protobuf/protobuf-java/protobuf-java-2.5.0.jar" sourcepath="lib_managed/srcs/com.google.protobuf/protobuf-java/protobuf-java-2.5.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.google.protobuf/protobuf-java/protobuf-java-2.5.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.google.code.gson/gson/gson-2.2.4.jar" sourcepath="lib_managed/srcs/com.google.code.gson/gson/gson-2.2.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.google.code.gson/gson/gson-2.2.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-auth/hadoop-auth-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-auth/hadoop-auth-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-auth/hadoop-auth-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.httpcomponents/httpclient/httpclient-4.2.5.jar" sourcepath="lib_managed/srcs/org.apache.httpcomponents/httpclient/httpclient-4.2.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.httpcomponents/httpclient/httpclient-4.2.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.httpcomponents/httpcore/httpcore-4.2.4.jar" sourcepath="lib_managed/srcs/org.apache.httpcomponents/httpcore/httpcore-4.2.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.httpcomponents/httpcore/httpcore-4.2.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.directory.server/apacheds-kerberos-codec/apacheds-kerberos-codec-2.0.0-M15.jar" sourcepath="lib_managed/srcs/org.apache.directory.server/apacheds-kerberos-codec/apacheds-kerberos-codec-2.0.0-M15-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.directory.server/apacheds-kerberos-codec/apacheds-kerberos-codec-2.0.0-M15-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.directory.server/apacheds-i18n/apacheds-i18n-2.0.0-M15.jar" sourcepath="lib_managed/srcs/org.apache.directory.server/apacheds-i18n/apacheds-i18n-2.0.0-M15-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.directory.server/apacheds-i18n/apacheds-i18n-2.0.0-M15-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.directory.api/api-asn1-api/api-asn1-api-1.0.0-M20.jar" sourcepath="lib_managed/srcs/org.apache.directory.api/api-asn1-api/api-asn1-api-1.0.0-M20-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.directory.api/api-asn1-api/api-asn1-api-1.0.0-M20-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.directory.api/api-util/api-util-1.0.0-M20.jar" sourcepath="lib_managed/srcs/org.apache.directory.api/api-util/api-util-1.0.0-M20-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.directory.api/api-util/api-util-1.0.0-M20-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.curator/curator-framework/curator-framework-2.6.0.jar" sourcepath="lib_managed/srcs/org.apache.curator/curator-framework/curator-framework-2.6.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.curator/curator-framework/curator-framework-2.6.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.curator/curator-client/curator-client-2.6.0.jar" sourcepath="lib_managed/srcs/org.apache.curator/curator-client/curator-client-2.6.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.curator/curator-client/curator-client-2.6.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.zookeeper/zookeeper/zookeeper-3.4.6.jar" sourcepath="lib_managed/srcs/org.apache.zookeeper/zookeeper/zookeeper-3.4.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.zookeeper/zookeeper/zookeeper-3.4.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.slf4j/slf4j-log4j12/slf4j-log4j12-1.7.16.jar" sourcepath="lib_managed/srcs/org.slf4j/slf4j-log4j12/slf4j-log4j12-1.7.16-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.slf4j/slf4j-log4j12/slf4j-log4j12-1.7.16-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/junit/junit/junit-4.12.jar" sourcepath="lib_managed/srcs/junit/junit/junit-4.12-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/junit/junit/junit-4.12-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.hamcrest/hamcrest-core/hamcrest-core-1.3.jar" sourcepath="lib_managed/srcs/org.hamcrest/hamcrest-core/hamcrest-core-1.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.hamcrest/hamcrest-core/hamcrest-core-1.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/io.netty/netty/netty-3.9.9.Final.jar" sourcepath="lib_managed/srcs/io.netty/netty/netty-3.9.9.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/io.netty/netty/netty-3.9.9.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.apache.curator/curator-recipes/curator-recipes-2.6.0.jar" sourcepath="lib_managed/srcs/org.apache.curator/curator-recipes/curator-recipes-2.6.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.curator/curator-recipes/curator-recipes-2.6.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.htrace/htrace-core/htrace-core-3.0.4.jar" sourcepath="lib_managed/srcs/org.htrace/htrace-core/htrace-core-3.0.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.htrace/htrace-core/htrace-core-3.0.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-hdfs/hadoop-hdfs-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-hdfs/hadoop-hdfs-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-hdfs/hadoop-hdfs-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.mortbay.jetty/jetty-util/jetty-util-6.1.26.jar" sourcepath="lib_managed/srcs/org.mortbay.jetty/jetty-util/jetty-util-6.1.26-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.mortbay.jetty/jetty-util/jetty-util-6.1.26-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-mapreduce-client-app/hadoop-mapreduce-client-app-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-mapreduce-client-app/hadoop-mapreduce-client-app-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-mapreduce-client-app/hadoop-mapreduce-client-app-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-mapreduce-client-common/hadoop-mapreduce-client-common-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-mapreduce-client-common/hadoop-mapreduce-client-common-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-mapreduce-client-common/hadoop-mapreduce-client-common-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-yarn-common/hadoop-yarn-common-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-yarn-common/hadoop-yarn-common-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-yarn-common/hadoop-yarn-common-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-yarn-api/hadoop-yarn-api-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-yarn-api/hadoop-yarn-api-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-yarn-api/hadoop-yarn-api-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.xml.bind/jaxb-api/jaxb-api-2.2.2.jar" sourcepath="lib_managed/srcs/javax.xml.bind/jaxb-api/jaxb-api-2.2.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/javax.xml.bind/jaxb-api/jaxb-api-2.2.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.xml.stream/stax-api/stax-api-1.0-2.jar" sourcepath="lib_managed/srcs/javax.xml.stream/stax-api/stax-api-1.0-2-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.activation/activation/activation-1.1.1.jar" sourcepath="lib_managed/srcs/javax.activation/activation/activation-1.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.codehaus.jackson/jackson-jaxrs/jackson-jaxrs-1.9.13.jar" sourcepath="lib_managed/srcs/org.codehaus.jackson/jackson-jaxrs/jackson-jaxrs-1.9.13-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.codehaus.jackson/jackson-jaxrs/jackson-jaxrs-1.9.13-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.codehaus.jackson/jackson-xc/jackson-xc-1.9.13.jar" sourcepath="lib_managed/srcs/org.codehaus.jackson/jackson-xc/jackson-xc-1.9.13-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.codehaus.jackson/jackson-xc/jackson-xc-1.9.13-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.google.inject/guice/guice-3.0.jar" sourcepath="lib_managed/srcs/com.google.inject/guice/guice-3.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.google.inject/guice/guice-3.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.inject/javax.inject/javax.inject-1.jar" sourcepath="lib_managed/srcs/javax.inject/javax.inject/javax.inject-1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/javax.inject/javax.inject/javax.inject-1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/aopalliance/aopalliance/aopalliance-1.0.jar" sourcepath="lib_managed/srcs/aopalliance/aopalliance/aopalliance-1.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.sonatype.sisu.inject/cglib/cglib-2.2.1-v20090111.jar" sourcepath="lib_managed/srcs/org.sonatype.sisu.inject/cglib/cglib-2.2.1-v20090111-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.sonatype.sisu.inject/cglib/cglib-2.2.1-v20090111-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-yarn-client/hadoop-yarn-client-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-yarn-client/hadoop-yarn-client-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-yarn-client/hadoop-yarn-client-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-mapreduce-client-core/hadoop-mapreduce-client-core-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-mapreduce-client-core/hadoop-mapreduce-client-core-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-mapreduce-client-core/hadoop-mapreduce-client-core-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-yarn-server-common/hadoop-yarn-server-common-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-yarn-server-common/hadoop-yarn-server-common-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-yarn-server-common/hadoop-yarn-server-common-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.fusesource.leveldbjni/leveldbjni-all/leveldbjni-all-1.8.jar" sourcepath="lib_managed/srcs/org.fusesource.leveldbjni/leveldbjni-all/leveldbjni-all-1.8-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.fusesource.leveldbjni/leveldbjni-all/leveldbjni-all-1.8-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-mapreduce-client-shuffle/hadoop-mapreduce-client-shuffle-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-mapreduce-client-shuffle/hadoop-mapreduce-client-shuffle-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-mapreduce-client-shuffle/hadoop-mapreduce-client-shuffle-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.hadoop/hadoop-mapreduce-client-jobclient/hadoop-mapreduce-client-jobclient-2.6.5.jar" sourcepath="lib_managed/srcs/org.apache.hadoop/hadoop-mapreduce-client-jobclient/hadoop-mapreduce-client-jobclient-2.6.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.hadoop/hadoop-mapreduce-client-jobclient/hadoop-mapreduce-client-jobclient-2.6.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.spark/spark-launcher_2.11/spark-launcher_2.11-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.spark/spark-launcher_2.11/spark-launcher_2.11-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.spark/spark-tags_2.11/spark-tags_2.11-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.spark/spark-tags_2.11/spark-tags_2.11-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.spark-project.spark/unused/unused-1.0.0.jar" sourcepath="lib_managed/srcs/org.spark-project.spark/unused/unused-1.0.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.spark-project.spark/unused/unused-1.0.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.spark/spark-kvstore_2.11/spark-kvstore_2.11-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.spark/spark-kvstore_2.11/spark-kvstore_2.11-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.fasterxml.jackson.core/jackson-databind/jackson-databind-2.6.7.1.jar" sourcepath="lib_managed/srcs/com.fasterxml.jackson.core/jackson-databind/jackson-databind-2.6.7.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.fasterxml.jackson.core/jackson-annotations/jackson-annotations-2.6.7.jar" sourcepath="lib_managed/srcs/com.fasterxml.jackson.core/jackson-annotations/jackson-annotations-2.6.7-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.fasterxml.jackson.core/jackson-annotations/jackson-annotations-2.6.7-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.spark/spark-network-common_2.11/spark-network-common_2.11-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.spark/spark-network-common_2.11/spark-network-common_2.11-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/io.netty/netty-all/netty-all-4.1.17.Final.jar" sourcepath="lib_managed/srcs/io.netty/netty-all/netty-all-4.1.17.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/io.netty/netty-all/netty-all-4.1.17.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.commons/commons-lang3/commons-lang3-3.5.jar" sourcepath="lib_managed/srcs/org.apache.commons/commons-lang3/commons-lang3-3.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.commons/commons-lang3/commons-lang3-3.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/io.dropwizard.metrics/metrics-core/metrics-core-3.1.5.jar" sourcepath="lib_managed/srcs/io.dropwizard.metrics/metrics-core/metrics-core-3.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/io.dropwizard.metrics/metrics-core/metrics-core-3.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.commons/commons-crypto/commons-crypto-1.0.0.jar" sourcepath="lib_managed/srcs/org.apache.commons/commons-crypto/commons-crypto-1.0.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.commons/commons-crypto/commons-crypto-1.0.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.spark/spark-network-shuffle_2.11/spark-network-shuffle_2.11-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.spark/spark-network-shuffle_2.11/spark-network-shuffle_2.11-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.spark/spark-unsafe_2.11/spark-unsafe_2.11-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.spark/spark-unsafe_2.11/spark-unsafe_2.11-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.servlet/javax.servlet-api/javax.servlet-api-3.1.0.jar" sourcepath="lib_managed/srcs/javax.servlet/javax.servlet-api/javax.servlet-api-3.1.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/javax.servlet/javax.servlet-api/javax.servlet-api-3.1.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.slf4j/jul-to-slf4j/jul-to-slf4j-1.7.16.jar" sourcepath="lib_managed/srcs/org.slf4j/jul-to-slf4j/jul-to-slf4j-1.7.16-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.slf4j/jul-to-slf4j/jul-to-slf4j-1.7.16-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.slf4j/jcl-over-slf4j/jcl-over-slf4j-1.7.16.jar" sourcepath="lib_managed/srcs/org.slf4j/jcl-over-slf4j/jcl-over-slf4j-1.7.16-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.slf4j/jcl-over-slf4j/jcl-over-slf4j-1.7.16-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.ning/compress-lzf/compress-lzf-1.0.3.jar" sourcepath="lib_managed/srcs/com.ning/compress-lzf/compress-lzf-1.0.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.ning/compress-lzf/compress-lzf-1.0.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.lz4/lz4-java/lz4-java-1.4.0.jar" sourcepath="lib_managed/srcs/org.lz4/lz4-java/lz4-java-1.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.lz4/lz4-java/lz4-java-1.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.github.luben/zstd-jni/zstd-jni-1.3.2-2.jar" sourcepath="lib_managed/srcs/com.github.luben/zstd-jni/zstd-jni-1.3.2-2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.github.luben/zstd-jni/zstd-jni-1.3.2-2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.roaringbitmap/RoaringBitmap/RoaringBitmap-0.5.11.jar" sourcepath="lib_managed/srcs/org.roaringbitmap/RoaringBitmap/RoaringBitmap-0.5.11-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.roaringbitmap/RoaringBitmap/RoaringBitmap-0.5.11-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.json4s/json4s-jackson_2.11/json4s-jackson_2.11-3.5.3.jar" sourcepath="lib_managed/srcs/org.json4s/json4s-jackson_2.11/json4s-jackson_2.11-3.5.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.json4s/json4s-jackson_2.11/json4s-jackson_2.11-3.5.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.json4s/json4s-core_2.11/json4s-core_2.11-3.5.3.jar" sourcepath="lib_managed/srcs/org.json4s/json4s-core_2.11/json4s-core_2.11-3.5.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.json4s/json4s-core_2.11/json4s-core_2.11-3.5.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.json4s/json4s-ast_2.11/json4s-ast_2.11-3.5.3.jar" sourcepath="lib_managed/srcs/org.json4s/json4s-ast_2.11/json4s-ast_2.11-3.5.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.json4s/json4s-ast_2.11/json4s-ast_2.11-3.5.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.json4s/json4s-scalap_2.11/json4s-scalap_2.11-3.5.3.jar" sourcepath="lib_managed/srcs/org.json4s/json4s-scalap_2.11/json4s-scalap_2.11-3.5.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.json4s/json4s-scalap_2.11/json4s-scalap_2.11-3.5.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.thoughtworks.paranamer/paranamer/paranamer-2.8.jar" sourcepath="lib_managed/srcs/com.thoughtworks.paranamer/paranamer/paranamer-2.8-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.thoughtworks.paranamer/paranamer/paranamer-2.8-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.jersey.core/jersey-client/jersey-client-2.22.2.jar" sourcepath="lib_managed/srcs/org.glassfish.jersey.core/jersey-client/jersey-client-2.22.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.jersey.core/jersey-client/jersey-client-2.22.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.ws.rs/javax.ws.rs-api/javax.ws.rs-api-2.0.1.jar" sourcepath="lib_managed/srcs/javax.ws.rs/javax.ws.rs-api/javax.ws.rs-api-2.0.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/javax.ws.rs/javax.ws.rs-api/javax.ws.rs-api-2.0.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.jersey.core/jersey-common/jersey-common-2.22.2.jar" sourcepath="lib_managed/srcs/org.glassfish.jersey.core/jersey-common/jersey-common-2.22.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.jersey.core/jersey-common/jersey-common-2.22.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.annotation/javax.annotation-api/javax.annotation-api-1.2.jar" sourcepath="lib_managed/srcs/javax.annotation/javax.annotation-api/javax.annotation-api-1.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/javax.annotation/javax.annotation-api/javax.annotation-api-1.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.glassfish.jersey.bundles.repackaged/jersey-guava/jersey-guava-2.22.2.jar" sourcepath="lib_managed/srcs/org.glassfish.jersey.bundles.repackaged/jersey-guava/jersey-guava-2.22.2-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.hk2/hk2-api/hk2-api-2.4.0-b34.jar" sourcepath="lib_managed/srcs/org.glassfish.hk2/hk2-api/hk2-api-2.4.0-b34-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.hk2/hk2-api/hk2-api-2.4.0-b34-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.hk2/hk2-utils/hk2-utils-2.4.0-b34.jar" sourcepath="lib_managed/srcs/org.glassfish.hk2/hk2-utils/hk2-utils-2.4.0-b34-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.hk2/hk2-utils/hk2-utils-2.4.0-b34-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.hk2.external/aopalliance-repackaged/aopalliance-repackaged-2.4.0-b34.jar" sourcepath="lib_managed/srcs/org.glassfish.hk2.external/aopalliance-repackaged/aopalliance-repackaged-2.4.0-b34-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.hk2.external/aopalliance-repackaged/aopalliance-repackaged-2.4.0-b34-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.hk2.external/javax.inject/javax.inject-2.4.0-b34.jar" sourcepath="lib_managed/srcs/org.glassfish.hk2.external/javax.inject/javax.inject-2.4.0-b34-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.hk2.external/javax.inject/javax.inject-2.4.0-b34-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.hk2/hk2-locator/hk2-locator-2.4.0-b34.jar" sourcepath="lib_managed/srcs/org.glassfish.hk2/hk2-locator/hk2-locator-2.4.0-b34-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.hk2/hk2-locator/hk2-locator-2.4.0-b34-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.javassist/javassist/javassist-3.18.1-GA.jar" sourcepath="lib_managed/srcs/org.javassist/javassist/javassist-3.18.1-GA-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.javassist/javassist/javassist-3.18.1-GA-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.hk2/osgi-resource-locator/osgi-resource-locator-1.0.1.jar" sourcepath="lib_managed/srcs/org.glassfish.hk2/osgi-resource-locator/osgi-resource-locator-1.0.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.hk2/osgi-resource-locator/osgi-resource-locator-1.0.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.jersey.core/jersey-server/jersey-server-2.22.2.jar" sourcepath="lib_managed/srcs/org.glassfish.jersey.core/jersey-server/jersey-server-2.22.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.jersey.core/jersey-server/jersey-server-2.22.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.jersey.media/jersey-media-jaxb/jersey-media-jaxb-2.22.2.jar" sourcepath="lib_managed/srcs/org.glassfish.jersey.media/jersey-media-jaxb/jersey-media-jaxb-2.22.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.jersey.media/jersey-media-jaxb/jersey-media-jaxb-2.22.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/javax.validation/validation-api/validation-api-1.1.0.Final.jar" sourcepath="lib_managed/srcs/javax.validation/validation-api/validation-api-1.1.0.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/javax.validation/validation-api/validation-api-1.1.0.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.jersey.containers/jersey-container-servlet/jersey-container-servlet-2.22.2.jar" sourcepath="lib_managed/srcs/org.glassfish.jersey.containers/jersey-container-servlet/jersey-container-servlet-2.22.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.jersey.containers/jersey-container-servlet/jersey-container-servlet-2.22.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.glassfish.jersey.containers/jersey-container-servlet-core/jersey-container-servlet-core-2.22.2.jar" sourcepath="lib_managed/srcs/org.glassfish.jersey.containers/jersey-container-servlet-core/jersey-container-servlet-core-2.22.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.glassfish.jersey.containers/jersey-container-servlet-core/jersey-container-servlet-core-2.22.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.clearspring.analytics/stream/stream-2.7.0.jar" sourcepath="lib_managed/srcs/com.clearspring.analytics/stream/stream-2.7.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.clearspring.analytics/stream/stream-2.7.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/io.dropwizard.metrics/metrics-jvm/metrics-jvm-3.1.5.jar" sourcepath="lib_managed/srcs/io.dropwizard.metrics/metrics-jvm/metrics-jvm-3.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/io.dropwizard.metrics/metrics-jvm/metrics-jvm-3.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/io.dropwizard.metrics/metrics-json/metrics-json-3.1.5.jar" sourcepath="lib_managed/srcs/io.dropwizard.metrics/metrics-json/metrics-json-3.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/io.dropwizard.metrics/metrics-json/metrics-json-3.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/io.dropwizard.metrics/metrics-graphite/metrics-graphite-3.1.5.jar" sourcepath="lib_managed/srcs/io.dropwizard.metrics/metrics-graphite/metrics-graphite-3.1.5-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/io.dropwizard.metrics/metrics-graphite/metrics-graphite-3.1.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.fasterxml.jackson.module/jackson-module-scala_2.11/jackson-module-scala_2.11-2.6.7.1.jar" sourcepath="lib_managed/srcs/com.fasterxml.jackson.module/jackson-module-scala_2.11/jackson-module-scala_2.11-2.6.7.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.fasterxml.jackson.module/jackson-module-scala_2.11/jackson-module-scala_2.11-2.6.7.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.fasterxml.jackson.module/jackson-module-paranamer/jackson-module-paranamer-2.7.9.jar" sourcepath="lib_managed/srcs/com.fasterxml.jackson.module/jackson-module-paranamer/jackson-module-paranamer-2.7.9-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.fasterxml.jackson.module/jackson-module-paranamer/jackson-module-paranamer-2.7.9-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.ivy/ivy/ivy-2.4.0.jar" sourcepath="lib_managed/srcs/org.apache.ivy/ivy/ivy-2.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.ivy/ivy/ivy-2.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/oro/oro/oro-2.0.8.jar" sourcepath="lib_managed/srcs/oro/oro/oro-2.0.8-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/net.razorvine/pyrolite/pyrolite-4.13.jar" sourcepath="lib_managed/srcs/net.razorvine/pyrolite/pyrolite-4.13-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/net.razorvine/pyrolite/pyrolite-4.13-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/net.sf.py4j/py4j/py4j-0.10.7.jar" sourcepath="lib_managed/srcs/net.sf.py4j/py4j/py4j-0.10.7-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/net.sf.py4j/py4j/py4j-0.10.7-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.codehaus.jettison/jettison/jettison-1.1.jar" sourcepath="lib_managed/srcs/org.codehaus.jettison/jettison/jettison-1.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.codehaus.jettison/jettison/jettison-1.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.daffodil/daffodil-sapi_2.11/daffodil-sapi_2.11-2.2.0.jar" sourcepath="lib_managed/srcs/org.apache.daffodil/daffodil-sapi_2.11/daffodil-sapi_2.11-2.2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.daffodil/daffodil-sapi_2.11/daffodil-sapi_2.11-2.2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.daffodil/daffodil-core_2.11/daffodil-core_2.11-2.2.0.jar" sourcepath="lib_managed/srcs/org.apache.daffodil/daffodil-core_2.11/daffodil-core_2.11-2.2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.daffodil/daffodil-core_2.11/daffodil-core_2.11-2.2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.daffodil/daffodil-runtime1-unparser_2.11/daffodil-runtime1-unparser_2.11-2.2.0.jar" sourcepath="lib_managed/srcs/org.apache.daffodil/daffodil-runtime1-unparser_2.11/daffodil-runtime1-unparser_2.11-2.2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.daffodil/daffodil-runtime1-unparser_2.11/daffodil-runtime1-unparser_2.11-2.2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.daffodil/daffodil-runtime1_2.11/daffodil-runtime1_2.11-2.2.0.jar" sourcepath="lib_managed/srcs/org.apache.daffodil/daffodil-runtime1_2.11/daffodil-runtime1_2.11-2.2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.daffodil/daffodil-runtime1_2.11/daffodil-runtime1_2.11-2.2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.daffodil/daffodil-io_2.11/daffodil-io_2.11-2.2.0.jar" sourcepath="lib_managed/srcs/org.apache.daffodil/daffodil-io_2.11/daffodil-io_2.11-2.2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.daffodil/daffodil-io_2.11/daffodil-io_2.11-2.2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.apache.daffodil/daffodil-lib_2.11/daffodil-lib_2.11-2.2.0.jar" sourcepath="lib_managed/srcs/org.apache.daffodil/daffodil-lib_2.11/daffodil-lib_2.11-2.2.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.apache.daffodil/daffodil-lib_2.11/daffodil-lib_2.11-2.2.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.scala-lang.modules/scala-xml_2.11/scala-xml_2.11-1.1.0.jar" sourcepath="lib_managed/srcs/org.scala-lang.modules/scala-xml_2.11/scala-xml_2.11-1.1.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.scala-lang.modules/scala-xml_2.11/scala-xml_2.11-1.1.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.scala-lang.modules/scala-parser-combinators_2.11/scala-parser-combinators_2.11-1.1.1.jar" sourcepath="lib_managed/srcs/org.scala-lang.modules/scala-parser-combinators_2.11/scala-parser-combinators_2.11-1.1.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.scala-lang.modules/scala-parser-combinators_2.11/scala-parser-combinators_2.11-1.1.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/com.ibm.icu/icu4j/icu4j-62.1.jar" sourcepath="lib_managed/srcs/com.ibm.icu/icu4j/icu4j-62.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.ibm.icu/icu4j/icu4j-62.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/xerces/xercesImpl/xercesImpl-2.12.0.jar" sourcepath="lib_managed/srcs/xerces/xercesImpl/xercesImpl-2.12.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/xerces/xercesImpl/xercesImpl-2.12.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/xml-apis/xml-apis/xml-apis-1.4.01.jar" sourcepath="lib_managed/srcs/xml-apis/xml-apis/xml-apis-1.4.01-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/xml-apis/xml-apis/xml-apis-1.4.01-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/xml-resolver/xml-resolver/xml-resolver-1.2.jar" sourcepath="lib_managed/srcs/xml-resolver/xml-resolver/xml-resolver-1.2-sources.jar"/>
+	<classpathentry kind="lib" path="lib_managed/jars/commons-io/commons-io/commons-io-2.6.jar" sourcepath="lib_managed/srcs/commons-io/commons-io/commons-io-2.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/commons-io/commons-io/commons-io-2.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/jline/jline/jline-2.14.6.jar" sourcepath="lib_managed/srcs/jline/jline/jline-2.14.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/jline/jline/jline-2.14.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/jars/org.jdom/jdom2/jdom2-2.0.6.jar" sourcepath="lib_managed/srcs/org.jdom/jdom2/jdom2-2.0.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.jdom/jdom2/jdom2-2.0.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.fasterxml.woodstox/woodstox-core/woodstox-core-5.1.0.jar" sourcepath="lib_managed/srcs/com.fasterxml.woodstox/woodstox-core/woodstox-core-5.1.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.fasterxml.woodstox/woodstox-core/woodstox-core-5.1.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/org.codehaus.woodstox/stax2-api/stax2-api-4.1.jar" sourcepath="lib_managed/srcs/org.codehaus.woodstox/stax2-api/stax2-api-4.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/org.codehaus.woodstox/stax2-api/stax2-api-4.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib_managed/bundles/com.fasterxml.jackson.core/jackson-core/jackson-core-2.9.6.jar" sourcepath="lib_managed/srcs/com.fasterxml.jackson.core/jackson-core/jackson-core-2.9.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:./lib_managed/docs/com.fasterxml.jackson.core/jackson-core/jackson-core-2.9.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

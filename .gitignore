@@ -1,0 +1,6 @@
+target
+/bin/
+/lib_managed/
+/.cache-main
+/.cache-tests
+.settings/
