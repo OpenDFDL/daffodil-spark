@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!--<![CDATA[ 
+Copyright (c) 2012-2018 Tresys Technology, LLC. All rights reserved.
+
+Developed by: Tresys Technology, LLC
+              http://www.tresys.com
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal with
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+ 1. Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimers.
+
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimers in the
+    documentation and/or other materials provided with the distribution.
+
+ 3. Neither the names of Tresys Technology, nor the names of its contributors
+    may be used to endorse or promote products derived from this Software
+    without specific prior written permission.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE
+SOFTWARE.
+]]>-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions"
+  xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:geo="http://www.geonames.org/xml"
+  xmlns:tns="http://www.geonames.org/xml" targetNamespace="http://www.geonames.org/xml"
+  elementFormDefault="unqualified">
+
+  <!--<![CDATA[ 
+    Parses the GeoNames data set. www.geonames.org This schema parses/unparses the geonames 
+    data. This data contains a URL followed by a RDF graph expressed as a chunk of XML which has been 
+    line-wrapped. This XML is "clobbered" by that process and so cannot be read by a normal XML parser. 
+    This schema doesn't reconstruct the XML you want. It just reliably parses the data. From this it's 
+    pretty easy to assemble the XML you want. This example illustrates how to use the dfdl:property element 
+    form of DFDL property syntax so as to not have to escape XML-like syntax when it appears in DFDL 
+    schemas.
+  ]]>-->
+
+  <xs:include schemaLocation="org/apache/daffodil/xsd/DFDLGeneralFormat.dfdl.xsd" />
+
+  <xs:annotation>
+    <xs:appinfo source="http://www.ogf.org/dfdl/">
+      <dfdl:defineFormat name="geonamesBase">
+        <dfdl:format ref="tns:GeneralFormat" representation="text" lengthKind="delimited"
+          encoding="UTF-8" encodingErrorPolicy="error"/>
+      </dfdl:defineFormat>
+      <dfdl:format ref="geo:geonamesBase" />
+    </xs:appinfo>
+  </xs:annotation>
+
+  <!-- 
+  <xs:element name="geonames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="geoname" type="tns:geonameType" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  -->
+  
+  <xs:element name="geoname" type="tns:geonameType" />
+
+  <xs:complexType name="geonameType">
+    <xs:group ref="tns:geonameGroup" />
+  </xs:complexType>
+
+  <!--<![CDATA[
+    In parsing this data. We are breaking out the parts that are desirable
+    from the parts you probably will want to eliminate/skip if reformatting or
+    processing the data.
+  ]]>-->
+  <xs:group name="geonameGroup">
+    <xs:sequence>
+      <!--<![CDATA[
+         The data starts with a URI/URL. It appears to be redundant with 
+         part of the following XML fragment. Though that may or may not
+         always be true. (There's too many gigs of data to check to see.)
+      ]]>-->
+      <xs:element name="graphURI" type="xs:string"
+        dfdl:terminator="%NL;" 
+        dfdl:textTrimKind="padChar" 
+        dfdl:textStringPadCharacter="%SP;"
+        dfdl:textStringJustification="center"/>
+      <xs:sequence>
+        <!--<![CDATA[
+          This XML Slug line is next. Not going to want this in any cleaned up format.
+        ]]>-->
+        <xs:element name="xmlSlugLine" type="xs:string">
+          <xs:annotation>
+            <xs:appinfo source="http://www.ogf.org/dfdl/">
+              <dfdl:element>
+                <dfdl:property name="initiator"><![CDATA[<?xml%WSP*;]]></dfdl:property>
+                <dfdl:property name="terminator"><![CDATA[?>%WSP*;]]></dfdl:property>
+              </dfdl:element>
+            </xs:appinfo>
+          </xs:annotation>
+        </xs:element>
+        <!--<![CDATA[
+          The guts is this quasi-XML element, which was chopped by some line-length
+          limitation. It was chopped without regard to the breaks being in the 
+          middle of element or attribute values, escape characters or anything else
+          that constraints XML syntax. So this data looks like XML, but it isn't
+          XML. We parse it into a bunch of text lines that if concatenated will
+          in fact be XML again.  
+        ]]>-->
+        <xs:sequence>
+          <xs:annotation>
+            <xs:appinfo source="http://www.ogf.org/dfdl/">
+              <dfdl:sequence>
+                <dfdl:property name="initiator"><![CDATA[<rdf:RDF%WSP+;]]></dfdl:property>
+              </dfdl:sequence>
+            </xs:appinfo>
+          </xs:annotation>
+          <xs:element name="prefixDefs" type="xs:string">
+            <!--<![CDATA[
+              We carve off these prefix defs because you almost certainly don't
+              want these repeated on every single record like this. They could 
+              go on a surrounding element, and appear exactly once.
+            ]]>-->
+            <xs:annotation>
+              <xs:appinfo source="http://www.ogf.org/dfdl/">
+                <dfdl:element>
+                  <dfdl:property name="terminator"><![CDATA[>]]></dfdl:property>
+                </dfdl:element>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:sequence dfdl:separator="%NL;">
+            <xs:annotation>
+            <xs:appinfo source="http://www.ogf.org/dfdl/">
+              <dfdl:sequence>
+                <dfdl:property name="terminator"><![CDATA[</rdf:RDF>%WSP*;]]></dfdl:property>
+              </dfdl:sequence>
+            </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="RDFLine" type="xs:string" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:group>
+
+</xs:schema>

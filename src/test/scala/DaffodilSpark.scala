@@ -18,7 +18,6 @@
 import org.apache.daffodil.sapi.Daffodil
 import java.nio.channels.Channels
 import scala.collection.mutable
-import org.apache.daffodil.sapi.Daffodil
 import org.apache.daffodil.sapi.io.InputSourceDataInputStream
 import org.apache.daffodil.sapi.infoset.ScalaXMLInfosetOutputter
 import org.apache.spark.SparkConf
@@ -30,33 +29,37 @@ import java.net.URI
 import org.apache.daffodil.sapi.DataProcessor
 import java.io.IOException
 import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
+import java.util.zip.GZIPInputStream
+import java.io.InputStream
+import org.apache.spark.rdd.RDD
+import scala.xml.Elem
+import org.apache.daffodil.sapi.infoset.ScalaXMLInfosetOutputter
+import org.apache.daffodil.sapi.io.InputSourceDataInputStream
 
 object DaffodilSpark {
 
   @transient lazy val log = org.apache.log4j.LogManager.getLogger("JOB")
 
   //
-  // This is just to avoid re-reloading the data processor for every file
+  // You could cache this to avoid re-reloading the data processor for every file.
+  // However, be careful. Must be distinct for each file.
+  // Trivial caching in a member of this object may cause all sorts of problems.
+  //
   // parsed. It should no longer be necessary once we get rid of use of the dpBytes
   // I.e., when https://issues.apache.org/jira/browse/DAFFODIL-1440 is fixed.
   //
-  private var dp_ : DataProcessor = null
   def getDP(dpBytes: Array[Byte]) = {
-    if (dp_ ne null) dp_
-    else {
-      dp_ = Daffodil.compiler().reload(Channels.newChannel(new ByteArrayInputStream(dpBytes)))
-      dp_
-    }
+    Daffodil.compiler().reload(Channels.newChannel(new ByteArrayInputStream(dpBytes)))
   }
 
-  def main(args: Array[String]): Unit = {
-
-    // create a Daffodil DataProcessor using arg(0) as the schema. This
+  def compileToByteArray(schemaArg: String) = {
+    //
+    // create a Daffodil DataProcessor using schemaArg as the schema. This
     // DataProcessor is used by the mapping functions, and so Spark send
     // it to the clusters, which will then use it in the map steps.
 
     val c = Daffodil.compiler()
-    val pf = c.compileSource(new URI(args(0)))
+    val pf = c.compileSource(new URI(schemaArg))
     if (pf.isError) {
       pf.getDiagnostics.foreach { d => System.err.println(d.getMessage()) }
       throw pf.getDiagnostics(0).getSomeCause
@@ -77,64 +80,95 @@ object DaffodilSpark {
     val baos = new ByteArrayOutputStream()
     dp.save(Channels.newChannel(baos))
     val dpBytes = baos.toByteArray()
+    dpBytes
+  }
 
-    // Standard Spark configuration
-    val conf = new SparkConf().setAppName("Daffodil Spark Test").set("spark.master", "local")
-    val sc = new SparkContext(conf)
+  val conf = new SparkConf().setAppName("Daffodil Spark Test").set("spark.master", "local").set("spark.cores.max", "10")
+  // Standard Spark configuration
+  val sc = new SparkContext(conf)
+
+  /**
+   * Splits up data into a scalable collection of XML elements using Daffodil to parse.
+   */
+  def toRDDElem(dpBytes: Array[Byte], dataFilesArg: String): RDD[Elem] = {
 
     // Create an RDD (essentially just a collection of items) where each item
     // in this collection is a PortableDataStream (a serializable wrapper
-    // around DataInputStream) of a file in the directory specified by args(1).
+    // around DataInputStream) of a file in the directory specified by dataFilesArg
     // Note that binaryFiles is marked as "experimental". Not sure if that's
     // because there are instabilities, or perhaps just some performance
     // issues
-    val dataFiles = sc.binaryFiles(args(1))
+    val dataFiles = sc.binaryFiles(dataFilesArg)
 
-    // For each file, map it to a NodeSeq by parsing it with the Daffodil data
-    // processor created earlier
-    val pcapNodes = dataFiles.map {
+    // For each file, parse it into multiple nodes by parsing repeatedly until the end is reached.
+    // Also stops on a parse error.
+    //
+    // This treats each file as a "stream of messages", each "message" is one parse of the schema.
+    // If the file is one giant object, you'll get a sequence of one Elem for each file.
+    // But if the file is many smaller objects, it will split them up and you will get a
+    // parallelizable spark collection from them.
+    //
+    val nodes = dataFiles.flatMap {
       case (filename, data) =>
         //
         // Once again, Until https://issues.apache.org/jira/browse/DAFFODIL-1440 is fixed,
         // we have to deserialize the Daffodil data processor ourselves.
         //
         val dp = getDP(dpBytes)
+        val isGZ = filename.endsWith("gz")
 
         val d = data.open()
-        val output = new ScalaXMLInfosetOutputter // A JSON outputter is also available!
-        val input = new InputSourceDataInputStream(d)
-        val pr = dp.parse(input, output)
-        val res = output.getResult()
-        d.close()
-        // log.warn("Parsing Complete")
-        res
+        val uncompressedStream =
+          if (isGZ)
+            new GZIPInputStream(d)
+          else
+            d
+        toIteratorElem(uncompressedStream, dp)
+
     }
-
-    //
-    // Above here, all the code is generic. Makes sense for any data format.
-    //
-    // Below here, this code is specific to the PCAP data schema, and is just illustrating
-    // convenient XML access using Scala's XML library, within Spark code that is
-    // potentially running in parallel/streaming mode.
-    //
-
-    // Extract all the Packets from each pcap file, and flat map them all to a
-    // single collection
-    val packetNodes = pcapNodes.flatMap { node => (node \ "Packet") }
-
-    // Extract all ipv4 packets
-    val ipv4Packets = packetNodes.filter { packetNode => (packetNode \ "LinkLayer" \ "Ethernet" \ "NetworkLayer" \ "IPv4").nonEmpty }
-
-    // Map the ipv4 packets to and src/dest key-value pair
-    val ipSrcDest = ipv4Packets.map { packetNode => ((packetNode \\ "IPSrc").text, (packetNode \\ "IPDest").text) }
-
-    // Aggregate the src/dest key-value pairs so that the key is the src and
-    // the value is the list of all unique IP destinations for that src
-    val ipSrcDestMapping = ipSrcDest.aggregateByKey(mutable.HashSet.empty[String])({ case (hs, dest) => hs += dest }, { case (hs1, hs2) => hs1 ++ hs2 })
-
-    // collect the results from the clusters, printing out the src and the set
-    // of unique destinations for the source
-    ipSrcDestMapping.collect.sortBy { _._1 }.foreach { case (src, dst) => println("%s -> %s".format(src, dst)) }
-
+    nodes
   }
+
+  def toIteratorElem(d: InputStream, dp: DataProcessor) = {
+    val output = new ScalaXMLInfosetOutputter // A JSON outputter is also available!
+    //
+    // If file name ends in "gz", then automatically decompress it as we parse
+    //
+    val input = new InputSourceDataInputStream(d)
+    //
+    // This call the the parse has to be sequential. If each parse is fast
+    // then this will scoot through the data quickly, splitting it up for
+    // subsequent processing in parallel when the nodes are consumed.
+    //
+    var done = false
+    val nodeIter = Iterator.continually {
+      if (done) None
+      else {
+        val pr = dp.parse(input, output)
+        if (pr.isError()) {
+          d.close()
+          done = true
+          //
+          // TODO: Do the right thing in Spark to indicate an error in the data.
+          // We may not want to stop processing entirely, but we don't want to mask the
+          // error by silently just truncating the data to the part we parsed
+          // successfully.
+          val diags = pr.getDiagnostics
+          val th = diags(0).getSomeCause //  there has to be at least 1 if we are in error state.
+          throw th
+          None
+        } else {
+          if (pr.location().isAtEnd()) {
+            d.close()
+            done = true
+          }
+          val res = output.getResult()
+          Some(res.asInstanceOf[scala.xml.Elem])
+        }
+      }
+    }
+    val nodes = nodeIter.takeWhile(_.isDefined).flatten
+    nodes
+  }
+
 }

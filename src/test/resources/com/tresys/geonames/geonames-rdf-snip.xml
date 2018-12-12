@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<geo:geonames 
+xmlns:geo="http://www.geonames.org/xml" 
+xmlns:cc="http://creativecommons.org/ns#"
+xmlns:dcterms="http://purl.org/dc/terms/" 
+xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+xmlns:gn="http://www.geonames.org/ontology#"
+xmlns:owl="http://www.w3.org/2002/07/owl#" 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+  <geoname>
+    <rdf:RDF>
+      <gn:Feature rdf:about="http://sws.geonames.org/3/">
+        <rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/3/about.rdf" />
+        <gn:name>Zamīn Sūkhteh</gn:name>
+        <gn:alternateName xml:lang="fa">Zamīn Sūkhteh
+        </gn:alternateName>
+        <gn:alternateName xml:lang="fa">زمين سوخته
+        </gn:alternateName>
+        <gn:featureClass rdf:resource="http://www.geonames.org/ontology#S" />
+        <gn:featureCode rdf:resource="http://www.geonames.org/ontology#S.CRRL" />
+        <gn:countryCode>IR</gn:countryCode>
+        <wgs84_pos:lat>32.45831</wgs84_pos:lat>
+        <wgs84_pos:long>48.96335</wgs84_pos:long>
+        <gn:parentFeature rdf:resource="http://sws.geonames.org/3202991/" />
+        <gn:parentCountry rdf:resource="http://sws.geonames.org/130758/" />
+        <gn:parentADM1 rdf:resource="http://sws.geonames.org/127082/" />
+        <gn:nearbyFeatures rdf:resource="http://sws.geonames.org/3/nearby.rdf" />
+        <gn:locationMap rdf:resource="http://www.geonames.org/3/zamin-sukhteh.html" />
+      </gn:Feature>
+    </rdf:RDF>
+  </geoname>
+  <geoname>
+    <rdf:RDF>
+      <gn:Feature rdf:about="http://sws.geonames.org/4/">
+        <rdfs:isDefinedBy rdf:resource="http://sws.geonames.org/4/about.rdf" />
+        <gn:name>Rūdkhāneh-ye Āb-e Zālek</gn:name>
+        <gn:alternateName xml:lang="fa">Rūdkhāneh-ye Zākalī
+        </gn:alternateName>
+        <gn:alternateName>Rūdkhāneh-ye Āb-e Zālekī</gn:alternateName>
+        <gn:alternateName xml:lang="fa">Āb-e Zālakī
+        </gn:alternateName>
+        <gn:alternateName xml:lang="fa">رودخانه آب زالک
+        </gn:alternateName>
+        <gn:alternateName xml:lang="fa">رودخانه زاکلی
+        </gn:alternateName>
+        <gn:alternateName>Rūdkhāneh-ye Āb-e Zālek</gn:alternateName>
+        <gn:alternateName xml:lang="fa">رودخانه آب زالکی
+        </gn:alternateName>
+        <gn:featureClass rdf:resource="http://www.geonames.org/ontology#H" />
+        <gn:featureCode rdf:resource="http://www.geonames.org/ontology#H.STM" />
+        <gn:countryCode>IR</gn:countryCode>
+        <wgs84_pos:lat>32.93273</wgs84_pos:lat>
+        <wgs84_pos:long>48.76505</wgs84_pos:long>
+        <gn:parentFeature rdf:resource="http://sws.geonames.org/127082/" />
+        <gn:parentCountry rdf:resource="http://sws.geonames.org/130758/" />
+        <gn:parentADM1 rdf:resource="http://sws.geonames.org/127082/" />
+        <gn:nearbyFeatures rdf:resource="http://sws.geonames.org/4/nearby.rdf" />
+        <gn:locationMap rdf:resource="http://www.geonames.org/4/rudkhaneh-ye-ab-e-zalek.html" />
+      </gn:Feature>
+    </rdf:RDF>
+  </geoname>
+</geo:geonames>
