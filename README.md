@@ -6,16 +6,21 @@ This example shows how easy it is to use Daffodil to parse
 data that is described by a DFDL schema, and feed that data into 
 Spark processing for parallel/scalable treatment.
 
-The example and unit test use PCAP (Packet capture) which is a 
+There are two examples. One uses PCAP (Packet capture) data which is a 
 binary data format that is useful as an example because binary data is
 exactly the kind of data people find hardest to access.
+
+Another example uses the GeoNames data - this is a big data set and the 
+example shows how to split it up (quickly) so that you can operate on 
+it in parallel with spark. In this case, just to convert it into "true real" XML,
+and write out a compressed RDD. 
 
 The techniques here can be adapted to any data format described by
 a DFDL schema.
 
-The copy of the PCAP schema included here for testing/example may not be 
-the latest one. Look on github for a more current one if you are 
-actually interested in PCAP data per se.
+The copies of the PCAP and GeoNames schemas included here for testing/example may not be 
+the latest. Look on github for a more current one if you are 
+actually interested in PCAP and/or GeoNames data per se.
 
 == Additional thoughts for spark enthusiasts ==
 
